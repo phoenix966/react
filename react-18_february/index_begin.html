@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+           <main class="wrapper">
+
+           <div id="person1"></div>
+           <div id="person2"></div>
+
+
+        </main>
+    </div>
+
+
+    <!-- <script type="module" src="peoples.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+    <script type="text/babel"> // добавляем ключ для Babel
+        function Person(props){
+            return  (  //JSX (class меняем  на className)
+            <article className="person">
+                <h3 className="title">{props.name}</h3>
+                <p className="age"><span>{props.age}</span></p>
+            </article>)
+        }
+
+        const person1 = document.getElementById('person1')
+        const person2 = document.getElementById('person2')
+        ReactDOM.render(<Person name="Mick Jagger" age="75"/>,person1);  // Первое что вставить (функцию) , второе куда вставить
+        ReactDOM.render(<Person name="Katty Perry" age="36"/>,person2);
+    </script>
+</body>
+</html>

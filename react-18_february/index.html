@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+  <script type="text/babel">
+    function Person(props) {
+      return ( // JSX
+        <article className="person">
+          <h3 className="title">{props.name}</h3>
+          <p className="age">Age: <span>{props.age}</span></p>
+        </article>
+      );
+
+    //   return React.createElement('article',null, 
+    //    React.createElement('h3',{className: 'title'},props.name) ),
+    //    React.createElement('p',{className: 'age'},'Age: ',        //Так выглядит код  React под капотом
+    //    React.createElement('span',null,props.age)  )
+    }
+
+    const peoples = (
+      <main className="wrapper">
+        <Person name="Micky Rurk" age="75" />
+        <Person name="Ketty Perry" age="35" />
+        <Person name="Mike Doe" age="45" />
+      </main>
+    );
+
+    const root = document.getElementById('root');
+
+    ReactDOM.render(peoples, root);
+
+  </script>
+
+</body>
+</html>
